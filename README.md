@@ -8,6 +8,7 @@ $ npm install --global gulp-cli
 - Install all dependencies:
 ```
 npm install
+"bulma": "^0.6.0",
 ```
 
 npm 5.6.0 | node 8.11.1
