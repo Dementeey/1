@@ -30,8 +30,8 @@ const path = {
   },
   watch: {                                  // Тут мы укажем, за изменением каких файлов мы хотим наблюдать
     html: 'src/**/*.html',
-    js: 'src/js/**/*.js',
-    style: 'src/sass/**/*.sass',
+    js: 'src/**/*.js',
+    style: 'src/**/*.sass',
     fonts: 'src/fonts/**/*.*',
     img: 'src/**/*.+(png|jpg)'
   },
