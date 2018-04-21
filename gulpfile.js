@@ -25,7 +25,7 @@ const path = {
     js: 'src/js/index.js',                  // В стилях и скриптах нам понадобятся только main файлы
     style: 'src/sass/index.sass',
     fonts: 'src/fonts/**/*.*',
-    img: 'src/**/*.+(png|jpg)',             // Синтаксис img/**/*.* означает - взять все файлы всех расширений
+    img: 'src/blocks/**/*.+(png|jpg|svg)',             // Синтаксис img/**/*.* означает - взять все файлы всех расширений
                                             // из папки и из вложенных каталогов
   },
   watch: {                                  // Тут мы укажем, за изменением каких файлов мы хотим наблюдать
@@ -83,7 +83,7 @@ gulp.task('image:build', function () {
       progressive: true,
       optimizationLevel: 5,
       svgoPlugins: [{removeViewBox: true}],
-      use: [pngquant()],
+      use: [pngquant({quality: '60-80', speed: 4})],
       interlaced: true
     }))
     .pipe(gulp.dest(path.build.img))        // И бросим в build
