@@ -1,5 +1,47 @@
+.burger-wrap
+  width: 18px
+  height: 12px
+  position: relative
+
+
+  &--active .burger
+    background-color: transparent
+    transition: 0.5s
+
+  &--active .burger::before
+    transform: rotate(45deg)
+    top: 0
+    transition: 0.5s
+
+  &--active .burger::after
+    transform: rotate(-45deg)
+    top: 0
+    transition: 0.5s
+
 .burger
   width: 18px
   height: 2px
   border-radius: 1px
-  background-color: #000000
+  background-color: $color-black
+  position: absolute
+  top: 5px
+  left: 0
+  transition: 0.5s
+
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    width: 18px
+    height: 2px
+    background-color: $color-black
+
+  &::before
+    top: -4px
+  &::after
+    top: 4px
+
+@media (min-width: $desktop-width)
+  .burger-wrap,
+  .burger
+    display: none

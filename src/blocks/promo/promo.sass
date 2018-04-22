@@ -1,16 +1,19 @@
 .promo
-  background: url("../img/promo/photo-cake-bg.png") no-repeat
-  background-position: 0 0
+  //background: url("../img/promo/photo-cake-bg.png") no-repeat
+  background-position: center 0
   height: 240px
   padding-top: 134px
-  background-size: 391px 391px
+  background-size: 110% 201px
+  display: flex
+  flex-direction: column
+  align-items: center
 
   &__title
     font-family: "Playfair Display"
     margin: 0
     padding: 0
     width: 181px
-    height: 65px
+    min-height: 65px
     color: #2d2829
     font-size: 40px
     font-weight: 700
@@ -19,4 +22,4 @@
     text-align: center
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-    background-image: url("../img/promo/photo-cake-bg@2x.png")
+    //background-image: url("../img/promo/photo-cake-bg@2x.png")
