@@ -10,8 +10,15 @@
   align-items: center
 
 
-  @media (min-width: $tablet-width)
+@media (min-width: $tablet-width)
+  .page-header .container
     justify-content: space-around
 
-  @media (min-width: $desktop-width)
-    justify-content: space-around
+@media (min-width: $desktop-width)
+  .page-header
+    background-color: transparent
+    margin-top: 40px
+
+  .page-header .container
+    align-items: baseline
+

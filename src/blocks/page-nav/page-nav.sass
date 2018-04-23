@@ -29,21 +29,24 @@
 
 
   &__link
-    width: 163px
-    height: 13px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 100%
     color: #383838
-    font-family: 'Circe'
+    font-family: 'Circe', serif
     font-size: 12px
     font-weight: 400
     text-transform: uppercase
     text-decoration: none
-    text-align: center
+    //border: 1px solid darkred
 
   &__telephone
-    width: 113px
+    min-width: 113px
     height: 12px
     color: #2d2829
-    font-family: 'Circe'
+    font-family: 'Circe', serif
     font-size: 15px
     font-weight: 700
     text-decoration: none
@@ -55,6 +58,7 @@
   @media (min-width: $tablet-width)
     position: unset
     justify-content: flex-end
+
     &__menu
       width: 320px
 
@@ -65,35 +69,27 @@
 
 
   @media (min-width: $desktop-width)
-    position: unset
-    justify-items: unset
+    justify-content: flex-start
+    align-items: center
 
-    &__menu
-      position: unset
-      max-width: 900px
+    &__menu,
+    &--active &__menu
+      width: 100%
       display: flex
-      flex-direction: row
-      justify-content: unset
+      position: static
+      order: -1
+
 
     &__item
       background: none
       box-shadow: none
-      min-width: 40px
-      min-height: 40px
       display: flex
-      justify-content: center
-      align-items: center
-
+      width: auto
+      margin-left: 43px
 
     &__link
-      width: 163px
-      height: 13px
-      color: #383838
-      font-family: 'Circe'
-      font-size: 12px
-      font-weight: 400
-      text-transform: uppercase
-      text-decoration: none
-      text-align: center
+      &:hover
+        color: #f50049
 
     &__telephone
+

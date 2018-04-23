@@ -5,17 +5,10 @@
 
 html,
 body
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
-  background: $primary-color
+  background: $color-primary
 
 .container
   +getPadding($mobile-width, $container-mobile-width)
-  //display: flex
-  //flex-direction: column
-  //align-items: center
-  //justify-content: space-around
-
-  //margin: 0 auto
 
   @media (min-width: $tablet-width)
     +getPadding($tablet-width, $container-tablet-width)
