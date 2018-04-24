@@ -18,16 +18,18 @@
     color: $color-night-rider
     font-size: 40px
     font-weight: 700
+    font-style: normal
     line-height: 36px
     letter-spacing: 1.22px
     text-align: center
 
   &__subtitle
     color: #32313d
-    font-family: 'Intro Script', serif
+    font-family: 'IntroScript', serif
     font-size: 22px
     font-weight: 400
     line-height: 77.95px
+    display: block
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
     background-image: url("../img/promo/photo-cake-bg-320@2x.png")
@@ -70,8 +72,15 @@
   @media (min-width: $desktop-width)
     min-height: 650px
     background-size: 941px
-    background-position: 45vw 10px
+    background-position: 43.6vw 14px
+    padding-top: 142px
 
     &__title
+      width: 353px
+      min-height: 127px
+      font-size: 78px
+      line-height: 70px
+      letter-spacing: 5.74px
 
     &__subtitle
+      margin-top: 5px
