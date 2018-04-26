@@ -10,6 +10,7 @@
 1. gulp-autoprefixer 
 1. gulp-minify-css
 1. gulp-imagemin + imagemin-pngquant — IMGmin
+1. gulp-svgmin
 1. gulp-uglify — JSmin
 1. gulp-sass
 1. gulp-watch

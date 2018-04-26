@@ -11,6 +11,7 @@ const pngquant = require('imagemin-pngquant');
 const browserSync = require("browser-sync");
 const reload = browserSync.reload;
 const rimraf = require('rimraf');
+const svgmin = require('gulp-svgmin');
 
 const path = {
   build: {                                  // Тут мы укажем куда складывать готовые после сборки файлы
@@ -18,14 +19,16 @@ const path = {
     js: './build/js/',
     css: 'build/css/',
     fonts: 'build/fonts/',
-    img: 'build/img/'
+    img: 'build/img/',
+    svg: 'build/img/'
   },
   src: {                                    // Пути откуда брать исходники
     html: 'src/*.html',                     // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
     js: 'src/js/index.js',                  // В стилях и скриптах нам понадобятся только main файлы
     style: 'src/sass/index.sass',
     fonts: 'src/fonts/**/*.*',
-    img: 'src/blocks/**/*.+(png|jpg|svg)',             // Синтаксис img/**/*.* означает - взять все файлы всех расширений
+    img: 'src/blocks/**/*.+(png|jpg)',      // Синтаксис img/**/*.* означает - взять все файлы всех расширений
+    svg: 'src/blocks/**/*.svg'              // Синтаксис img/**/*.* означает - взять все файлы всех расширений
                                             // из папки и из вложенных каталогов
   },
   watch: {                                  // Тут мы укажем, за изменением каких файлов мы хотим наблюдать
@@ -33,7 +36,8 @@ const path = {
     js: 'src/**/*.js',
     style: 'src/**/*.sass',
     fonts: 'src/fonts/**/*.*',
-    img: 'src/**/*.+(png|jpg)'
+    img: 'src/**/*.+(png|jpg)',
+    svg: 'src/**/*.svg'
   },
   clean: './build'
 };
@@ -90,6 +94,29 @@ gulp.task('image:build', function () {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('imageSvg:build', function () {
+  return gulp.src(path.src.svg)             // Выберем наши SVG картинки
+    .pipe(svgmin({
+      plugins: [{
+        removeDoctype: true
+      }, {
+        removeComments: true
+      }, {
+        cleanupNumericValues: {
+          floatPrecision: 2
+        }
+      }, {
+        convertColors: {
+          names2hex: false,
+          rgb2hex: false
+        }
+      }]
+    }))
+    .pipe(gulp.dest(path.build.svg))        // И бросим в build
+    .pipe(reload({stream: true}));
+});
+
+
 gulp.task('fonts:build', function() {
   return gulp.src(path.src.fonts)
     .pipe(gulp.dest(path.build.fonts))
@@ -102,7 +129,8 @@ gulp.task('build', [
   'js:build',
   'style:build',
   'fonts:build',
-  'image:build'
+  'image:build',
+  'imageSvg:build'
 ]);
 
 gulp.task('watch', function(){
@@ -117,6 +145,9 @@ gulp.task('watch', function(){
   });
   watch([path.watch.img], function(event, cb) {
     gulp.start('image:build');
+  });
+  watch([path.watch.svg], function(event, cb) {
+    gulp.start('imageSvg:build');
   });
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts:build');

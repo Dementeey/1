@@ -27,6 +27,7 @@
     "gulp-clean-css": "^3.9.3",
     "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^4.0.1",
+    "gulp-svgmin": "^1.2.4",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^5.0.0",
     "imagemin-pngquant": "^5.1.0",
