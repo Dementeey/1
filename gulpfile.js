@@ -85,13 +85,13 @@ gulp.task('style:build', function () {
 gulp.task('image:build', function () {
   return gulp.src(path.src.img)             // Выберем наши картинки
     .pipe(imagemin({                        // Сожмем их
-      // progressive: true,
-      // optimizationLevel: 5,
+      progressive: true,
+      optimizationLevel: 5,
       use: [
         pngquant({quality: '60', speed: 5}),
         imageminJpegoptim({progressive: true, max: 85, stripAll: true})
-      ]
-      // interlaced: true
+      ],
+      interlaced: true
     }))
     .pipe(gulp.dest(path.build.img))        // И бросим в build
     .pipe(reload({stream: true}));

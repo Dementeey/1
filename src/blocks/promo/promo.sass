@@ -1,6 +1,8 @@
 .promo
-  background: url("../img/promo/photo-cake-bg-320.png") no-repeat 0px -185px
-  background-size: 100% 100%
+  //background: url("../img/promo/photo-cake-bg-320.png") no-repeat -20px  -140px
+  background: url("../img/promo/promo-sprite.png") no-repeat 0px 5px, url("../img/promo/promo-sprite.png") no-repeat 0px 20px, url("../img/promo/promo-sprite.png") no-repeat 0px 35px, url("../img/promo/photo-cake-bg-320-min.png") no-repeat -20px  -140px
+
+  background-size: 380px 295px
   //box-sizing: content-box
   width: 100%
   min-height: 450px
@@ -13,7 +15,6 @@
     font-family: 'Playfair Display', serif
     margin: 0
     padding: 0
-    width: 181px
     min-height: 65px
     color: $color-night-rider
     font-size: 40px
@@ -22,6 +23,8 @@
     line-height: 36px
     letter-spacing: 1.22px
     text-align: center
+    display: flex
+    justify-content: center
 
 
   &__subtitle
@@ -30,12 +33,37 @@
     font-size: 22px
     font-weight: 400
     line-height: 77.95px
-    display: block
-    text-align: center
+    //display: block
+    //text-align: center
 
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-    background-image: url("../img/promo/photo-cake-bg-320@2x.png")
+    display: flex
+    justify-content: center
 
+  //@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+  //  background-image: url("../img/promo/photo-cake-bg-320@2x.png")
+
+  &__short-advantages-wrap
+
+  &__short-advantages
+    padding-left: 42px
+    color: #000000
+    font-family: Circe, sans-serif
+    font-size: 14px
+    font-weight: 400
+    margin-top: 25px
+    position: relative
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 33px
+      height: 33px
+      background: url("../img/promo/promo-sprite-mob.png") no-repeat 50% 0
+
+    &:nth-last-child::before
+      background-position: 50% 20%
 
   @media (min-width: $tablet-width), (min-width: $mobile-width + 1)
     background-position: 40vw 10px
@@ -44,15 +72,16 @@
 
     &__title
       text-align: left
+      justify-content: flex-start
 
   @media (min-width: $tablet-width)
-    background-image: url("../img/promo/photo-cake-bg.png")
+    background-image: url("../img/promo/photo-cake-bg-min.png")
     min-height: 650px
     background-size: 85vw
     background-position: 35vw 10px
 
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-      background-image: url("../img/promo/photo-cake-bg@2x.png")
+    //@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    //  background-image: url("../img/promo/photo-cake-bg@2x.png")
 
     &__title
       width: 270px
@@ -61,6 +90,7 @@
       line-height: 55px
       letter-spacing: 1.34px
       text-align: left
+      justify-content: flex-start
 
     &__subtitle
       color: #32313d
@@ -69,8 +99,7 @@
       font-weight: 400
       line-height: 77.95px
       text-align: left
-
-
+      justify-content: flex-start
 
   @media (min-width: $desktop-width)
     min-height: 941px
