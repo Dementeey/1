@@ -1,3 +1,8 @@
+.button-wrap
+  display: flex
+  flex-direction: row
+  justify-content: center
+
 .button
   display: flex
   width: 226px
@@ -15,10 +20,19 @@
   margin-top: 41px
   outline-color: transparent
 
+
+  //--------------------------------------------------------------------------------
+  //    NEW media
+  //--------------------------------------------------------------------------------
+
   @media (min-width: $tablet-width)
     &:hover
       cursor: pointer
 
+
+  //--------------------------------------------------------------------------------
+  //    NEW media
+  //--------------------------------------------------------------------------------
 
   @media (min-width: $desktop-width)
     &:active

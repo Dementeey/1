@@ -1,6 +1,5 @@
 .promo
-  //background: url("../img/promo/photo-cake-bg-320.png") no-repeat -20px  -140px
-  background: url("../img/promo/promo-sprite.png") no-repeat 0px 5px, url("../img/promo/promo-sprite.png") no-repeat 0px 20px, url("../img/promo/promo-sprite.png") no-repeat 0px 35px, url("../img/promo/photo-cake-bg-320-min.png") no-repeat -20px  -140px
+  background: url("../img/promo/photo-cake-bg-320.png") no-repeat -5px  -140px
 
   background-size: 380px 295px
   //box-sizing: content-box
@@ -10,6 +9,7 @@
   display: flex
   flex-direction: column
   align-items: center
+
 
   &__title
     font-family: 'Playfair Display', serif
@@ -46,9 +46,10 @@
     display: flex
     flex-direction: column
 
+
   &__short-advantages
     display: flex
-    align-itemst: center
+    align-items: center
     padding-left: 42px
     color: #000000
     font-family: Circe, sans-serif
@@ -56,6 +57,7 @@
     font-weight: 400
     margin-top: 25px
     position: relative
+    height: 33px
 
     &::before
       content: ''
@@ -69,10 +71,16 @@
     &:last-child::before
       background-position: 100% 50%
 
+
+  //--------------------------------------------------------------------------------
+  //    NEW media
+  //--------------------------------------------------------------------------------
+
   @media (min-width: $tablet-width), (min-width: $mobile-width + 1)
-    background-position: 40vw 10px
+    //background-position: 40vw 10px
     background-size: contain
     align-items: flex-start
+    background: url("../img/promo/promo-sprite.png") no-repeat 0px 5px, url("../img/promo/promo-sprite.png") no-repeat 0px 20px, url("../img/promo/promo-sprite.png") no-repeat 0px 35px, url("../img/promo/photo-cake-bg-320-min.png") no-repeat 40vw 10px
 
     &__title
       text-align: left
@@ -84,6 +92,9 @@
 
 
 
+  //--------------------------------------------------------------------------------
+  //    NEW media
+  //--------------------------------------------------------------------------------
 
   @media (min-width: $tablet-width)
     background-image: url("../img/promo/photo-cake-bg-min.png")
@@ -121,6 +132,11 @@
       &::before
         width: 55px
         height: 55px
+
+
+  //--------------------------------------------------------------------------------
+  //    NEW media
+  //--------------------------------------------------------------------------------
 
   @media (min-width: $desktop-width)
     min-height: 941px

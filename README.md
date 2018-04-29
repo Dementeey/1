@@ -4,7 +4,7 @@
 
 ### I'm use gulp and gulp-plugin
 
-Плагины:
+Plugins:
 
 1. browser-sync
 1. gulp-autoprefixer 
