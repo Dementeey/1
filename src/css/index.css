@@ -1,0 +1,43 @@
+:root {
+/* main colors */
+--primary-right-card-text-colors: rgb(61,66,72);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card__left-side {
+
+}
+
+.card__right-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.scroll__wrap {
+  align-self: flex-end;
+}
