@@ -11,25 +11,55 @@
 <body>
 
   <div class="main-wrap menu is-closed">
+
     <div class="logo">
       <a class="logo__link" href="/">Karnolla</a>
     </div>
-    <button class="close-menu" style="width: 50px;"> X </button>
-    <ul>
-      <li>1-dada</li>
-      <li>2-dada</li>
-      <li>3-dada</li>
-      <li>4-dada</li>
-      <li>5-dada</li>
-    </ul>
-    <ul>
-      <li>1-social</li>
-      <li>2-social</li>
-      <li>3-social</li>
-    </ul>
-  </div>
 
-  <div class="main-wrap card-1">
+    <div class="close-menu"></div>
+
+    <ul class="menu__nav-items">
+      <li class="menu__nav-item"><a href="#">Menu</a></li>
+      <li class="menu__nav-item"><a href="#">Photo</a></li>
+      <li class="menu__nav-item"><a href="#">News</a></li>
+      <li class="menu__nav-item"><a href="#">Booking</a></li>
+      <li class="menu__nav-item"><a href="#">Contacts</a></li>
+    </ul>
+
+    <ul class="menu__social">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Twitter</a></li>
+    </ul>
+
+  </div> <!-- menu end -->
+
+  <nav class="page-nav">
+    <ul class="page-nav__items">
+      <li class="page-nav__item page-nav__item--active">
+        <span class="page-nav__item-text">Our place</span>
+        <a href="#card-1" class="page-nav__link "  title="our place"></a>
+      </li>
+      <li class="page-nav__item">
+        <span class="page-nav__item-text"></span>
+        <a href="#card-2" class="page-nav__link"></a>
+      </li>
+      <li class="page-nav__item">
+        <span class="page-nav__item-text"></span>
+        <a href="#card-3" class="page-nav__link"></a>
+      </li>
+      <li class="page-nav__item">
+        <span class="page-nav__item-text"></span>
+        <a href="#card-4" class="page-nav__link"></a>
+      </li>
+      <li class="page-nav__item">
+        <span class="page-nav__item-text"></span>
+        <a href="#card-5" class="page-nav__link"></a>
+      </li>
+    </ul>
+  </nav> <!-- nav end -->
+
+  <div  id="card-1" class="main-wrap">
 
     <div class="card__left-side">
       <div class="logo">
@@ -47,26 +77,132 @@
       <div class="card-info">
         <h2 class="card-info__title">Restaurant</h2>
         <p class="card-info__text">We are passioned about food and drinks</p>
-        <button class="card-info__btn">⟶</button>
+        <button class="card-info__btn"></button>
       </div> <!-- info end -->
-
-      <nav class="page-nav">
-        <ul class="page-nav__items">
-          <li class="page-nav__item">our place</li>
-          <li class="page-nav__item"></li>
-          <li class="page-nav__item"></li>
-          <li class="page-nav__item"></li>
-          <li class="page-nav__item"></li>
-        </ul>
-      </nav> <!-- nav end -->
 
     </div> <!-- right-side end -->
 
-    <div class="burger-wrap">
+    <div class="burger-wrap" onclick="onClickOpenMenu()">
       <div class="burger"></div>
     </div> <!-- burger end -->
 
   </div> <!-- card1 end -->
+
+  <div  id="card-2" class="main-wrap">
+
+    <div class="card__left-side">
+      <div class="logo">
+        <a class="logo__link" href="/">Karnolla</a>
+      </div>
+      <img class="card__img" src="img/card__img-2.jpg" alt="image - our place">
+    </div> <!-- left-side end -->
+
+    <div class="card__right-side">
+
+      <div class="scroll-block">
+        <span class="scroll-block__text">Scroll down</span>
+      </div> <!-- scroll end -->
+
+      <div class="card-info">
+        <h2 class="card-info__title">Sandwiches</h2>
+        <p class="card-info__text">We are always ready to treat you with unusual tastes</p>
+        <button class="card-info__btn"></button>
+      </div> <!-- info end -->
+
+    </div> <!-- right-side end -->
+
+    <div class="burger-wrap" onclick="onClickOpenMenu()">
+      <div class="burger"></div>
+    </div> <!-- burger end -->
+
+  </div> <!-- card2 end -->
+
+  <div  id="card-3" class="main-wrap">
+
+    <div class="card__left-side">
+      <div class="logo">
+        <a class="logo__link" href="/">Karnolla</a>
+      </div>
+      <img class="card__img" src="img/card__img-3.jpg" alt="image - our place">
+    </div> <!-- left-side end -->
+
+    <div class="card__right-side">
+
+      <div class="scroll-block">
+        <span class="scroll-block__text">Scroll down</span>
+      </div> <!-- scroll end -->
+
+      <div class="card-info">
+        <h2 class="card-info__title">Salads</h2>
+        <p class="card-info__text">We use only fresh products for cooking delicious salads for you</p>
+        <button class="card-info__btn"></button>
+      </div> <!-- info end -->
+
+    </div> <!-- right-side end -->
+
+    <div class="burger-wrap" onclick="onClickOpenMenu()">
+      <div class="burger"></div>
+    </div> <!-- burger end -->
+
+  </div> <!-- card3 end -->
+
+  <div  id="card-4" class="main-wrap">
+
+    <div class="card__left-side">
+      <div class="logo">
+        <a class="logo__link" href="/">Karnolla</a>
+      </div>
+      <img class="card__img" src="img/card__img-4.jpg" alt="image - our place">
+    </div> <!-- left-side end -->
+
+    <div class="card__right-side">
+
+      <div class="scroll-block">
+        <span class="scroll-block__text">Scroll down</span>
+      </div> <!-- scroll end -->
+
+      <div class="card-info">
+        <h2 class="card-info__title">Pizza</h2>
+        <p class="card-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, odio vero.</p>
+        <button class="card-info__btn"></button>
+      </div> <!-- info end -->
+
+    </div> <!-- right-side end -->
+
+    <div class="burger-wrap" onclick="onClickOpenMenu()">
+      <div class="burger"></div>
+    </div> <!-- burger end -->
+
+  </div> <!-- card4 end -->
+
+  <div  id="card-5" class="main-wrap">
+
+    <div class="card__left-side">
+      <div class="logo">
+        <a class="logo__link" href="/">Karnolla</a>
+      </div>
+      <img class="card__img" src="img/card__img-5.jpg" alt="image - our place">
+    </div> <!-- left-side end -->
+
+    <div class="card__right-side">
+
+      <!-- <div class="scroll-block">
+        <span class="scroll-block__text">Scroll down</span>
+      </div> scroll end -->
+
+      <div class="card-info">
+        <h2 class="card-info__title">Pancake</h2>
+        <p class="card-info__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident corrupti cum dolores!</p>
+        <button class="card-info__btn"></button>
+      </div> <!-- info end -->
+
+    </div> <!-- right-side end -->
+
+    <div class="burger-wrap" onclick="onClickOpenMenu()">
+      <div class="burger"></div>
+    </div> <!-- burger end -->
+
+  </div> <!-- card5 end -->
 
 <script async src="js/index.js"></script>
 </body>
