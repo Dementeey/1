@@ -1,12 +1,24 @@
+/* Variables */
+
 :root {
 /* main colors */
 --primary-right-card-text-colors: rgb(61,66,72);
+--primary-left-card-text-colors:  rgb(255,255,255);
+--primary-bg-card-colors:         rgb(206, 231, 246);
+
+/* burger colors */
+--burger-bg-color:                rgb(255, 255, 255);
+--burger-color:                   rgb(52, 57, 66);
 
 }
+/*------------------------------- end -------------------------------*/
+
+/* General style */
 
 * {
   box-sizing: border-box;
 }
+
 html {
   font-size: 18px;
 }
@@ -14,10 +26,14 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--primary-bg-card-colors);
   font-size: 1rem;
+  font-family:  Helvetica, Arial, sans-serif;
 }
 
 .main-wrap {
+  position: relative;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,18 +42,84 @@ body {
   overflow: hidden;
 }
 
-.card__left-side {
 
+.card__left-side {
+  position: relative;
+
+  width: 50vw;
+  height: 100vh;
 }
 
 .card__right-side {
+  position: relative;
+
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  width: 50%;
+  align-items: center;
+  width: 50vw;
+  height: 100vh;
 }
+
+.burger-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+
+  background-color: var(--burger-bg-color);
+  transform: translate(-50%, -50%);
+}
+
+
+.burger {
+  position: absolute;
+
+  top: 20px; /* поправить */
+
+  width: 12px;
+  height: 3px;
+  background-color: var(--burger-color);
+}
+/*------------------------------- end -------------------------------*/
+
+/* Left card  */
+
+.logo {
+  position: absolute;
+  top: 14px;
+  left: 24px;
+}
+
+.logo__link {
+  font-weight: 100;
+  font-size: 1.333rem;
+  color: var(--primary-left-card-text-colors);
+  text-decoration: none;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+}
+/*------------------------------- end -------------------------------*/
+
+/* Right card */
 
 .scroll__wrap {
   align-self: flex-end;
 }
+/*------------------------------- end -------------------------------*/
+
+/*----------------------------- @media -----------------------------*/
+
+@media screen and (min-width: 769px) {
+  .logo__link:hover {
+    text-decoration: underline;
+    color: var(--primary-bg-card-colors);
+  }
+}
+/*------------------------------- end -------------------------------*/
