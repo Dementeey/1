@@ -10,6 +10,8 @@
 --burger-bg-color:                rgb(255, 255, 255);
 --burger-color:                   rgb(52, 57, 66);
 
+/* menu colors */
+--menu-bg-color:                  rgb(255, 132, 132);
 }
 /*------------------------------- end -------------------------------*/
 
@@ -26,9 +28,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--primary-bg-card-colors);
+
   font-size: 1rem;
-  font-family:  Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+
+  background-color: var(--primary-bg-card-colors);
 }
 
 .main-wrap {
@@ -42,6 +46,20 @@ body {
   overflow: hidden;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  background: var(--menu-bg-color);
+}
 
 .card__left-side {
   position: relative;
@@ -68,21 +86,53 @@ body {
 
   width: 52px;
   height: 52px;
-  border-radius: 50%;
 
   background-color: var(--burger-bg-color);
+  border-radius: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 
 .burger {
   position: absolute;
-
-  top: 20px; /* поправить */
+  top: 25px;
+  left: 16px;
 
   width: 12px;
   height: 3px;
+
   background-color: var(--burger-color);
+  border-radius: 3px;
+
+  transition: 250ms;
+}
+
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+
+  width: 20px;
+  height: 3px;
+
+  background-color: var(--burger-color);
+  border-radius: 3px;
+}
+
+.burger::before {
+  top: 8px;
+}
+
+.burger::after {
+  top: -8px;
+}
+
+.burger-wrap:active .burger {
+  width: 20px;
+
+  transition: 50ms;
 }
 /*------------------------------- end -------------------------------*/
 
@@ -118,8 +168,16 @@ body {
 
 @media screen and (min-width: 769px) {
   .logo__link:hover {
-    text-decoration: underline;
     color: var(--primary-bg-card-colors);
+    text-decoration: underline;
   }
+}
+/*------------------------------- end -------------------------------*/
+
+
+/* should be lower than all */
+
+.is-closed {
+  display: none;
 }
 /*------------------------------- end -------------------------------*/
