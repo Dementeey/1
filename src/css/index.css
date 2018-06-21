@@ -321,7 +321,7 @@ body {
 }
 
 .page-nav {
-  position: fixed;
+  position: absolute;
   top: 50%;
   right: 32px;
   z-index: 5;
