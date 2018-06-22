@@ -326,7 +326,7 @@ body {
   right: 32px;
   z-index: 5;
 
-  width: 150px;
+  min-width: 150px;
   height: 410px;
 
   text-align: right;
@@ -366,9 +366,8 @@ body {
   padding-right: 25px;
 }
 
-
 .page-nav__item-text {
-  padding-right: 15px;
+  padding-right: 0.8333rem;
 
   font-weight: 300;
   font-size: 0.8889rem;
@@ -417,10 +416,125 @@ body {
     text-decoration: underline;
   }
 }
+
+@media screen and (min-width: 1981px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 2049px) {
+  html {
+    font-size: 42px;
+  }
+
+  .page-nav {
+    right: 150px;
+    transform: translateY(-50%) scale(1.6);
+  }
+
+  .close-menu {
+    margin-top: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .close-menu::before,
+  .close-menu::after {
+    width: 60px;
+    height: 10px;
+  }
+
+  .burger-wrap {
+    transform: translate(-50%,-50%) scale(2);
+  }
+}
+
+@media screen and (max-width: 769px) {
+
+  .main-wrap {
+    flex-direction: column;
+  }
+
+  .burger-wrap {
+    top: 70vh;
+  }
+
+  .card__left-side {
+    width: 100vw;
+    height: 70vh;
+  }
+
+  .card__right-side {
+    width: 100vw;
+    height: 30vh;
+  }
+
+  .card__right-side {
+    flex-direction: column-reverse;
+  }
+
+  .page-nav {
+   display: none;
+  }
+
+  .card-info {
+    margin-top: -70px;
+  }
+
+  .scroll-block {
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 461px) {
+  html {
+    font-size: 16px;
+  }
+
+  .menu {
+    height: 100% ;
+    padding-bottom: 50px;
+  }
+
+
+.menu__social {
+  justify-content: space-around;
+}
+
+  .burger-wrap {
+    top: 60vh;
+  }
+
+  .card__left-side {
+    width: 100vw;
+    height: 60vh;
+  }
+
+  .card__right-side {
+    width: 100vw;
+    height: 40vh;
+  }
+
+  .card-info {
+    margin-top: -50px;
+  }
+  .card-info__text {
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
 /*------------------------------- end -------------------------------*/
 
 
 /* should be lower than all */
+
+.menu--active {
+  overflow: hidden;
+}
 
 .is-closed {
   display: none;
